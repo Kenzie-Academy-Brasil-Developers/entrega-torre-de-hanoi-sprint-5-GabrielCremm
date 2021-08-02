@@ -1,0 +1,27 @@
+/*media max-420px*/
+
+body{
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    
+}
+section{
+    width:150px ;
+   
+    border:2px solid;
+    margin: 0 auto;
+    
+}
+
+div{
+    height: 250px;
+    width: 10px;
+    border: 2px solid;
+    background-color: black;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
+    margin:0 auto;
+ }
+    
