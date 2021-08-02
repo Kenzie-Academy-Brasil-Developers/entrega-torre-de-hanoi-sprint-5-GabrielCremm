@@ -1,0 +1,56 @@
+:root {
+    --alturaBarra: 25px;
+    --bordaBarra: 1px solid black; 
+}
+
+body, header, main, article, footer, div, p{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+    #titulo {
+        text-align: center;
+    }
+    
+    #main {
+        display: flex;
+        justify-content: space-around;
+        width: 80vw;
+        border: 1px solid black;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .barra{
+        border-radius: 10px;
+    }    
+    
+    #barra25 {
+        background: rgb(11, 133, 0);
+        border: var(--bordaBarra);
+        width: 35px;
+        height: var(--alturaBarra);
+    } 
+
+    #barra50{
+        background: blueviolet;
+        border: var(--bordaBarra);
+        width: 60px;
+        height: var(--alturaBarra);
+    
+    } 
+    #barra75{
+        background: rgb(51, 89, 196);
+        border: var(--bordaBarra);
+        width: 90px;
+        height: var(--alturaBarra);
+    
+    } 
+    
+    #barra100{
+        background: red;
+        border: var(--bordaBarra);
+        width: 110px;
+        height: var(--alturaBarra);
+    }
