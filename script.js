@@ -12,35 +12,17 @@ const barra100 = document.createElement("div");
 
 // ESTILOS
 //TORRE START
-torreStart.style.alignItems= "center";
-torreStart.style.justifyContent= "flex-end";
-torreStart.style.display= "flex";
-torreStart.style.flexDirection= "column";
-torreStart.style.width = "15px";
-torreStart.style.height = "15rem";
-torreStart.style.background = "black";
+torreStart.className = "torre";
 
 principal.appendChild(torreStart);
 
 // TORRE OFF SET
-torreOffSet.style.alignItems= "center";
-torreOffSet.style.justifyContent= "flex-end";
-torreOffSet.style.display= "flex";
-torreOffSet.style.flexDirection= "column";
-torreOffSet.style.width = "15px";
-torreOffSet.style.height = "15rem";
-torreOffSet.style.background = "black";
+torreOffSet.className = "torre";
 
 principal.appendChild(torreOffSet);
 
 //TORRE END
-torreEnd.style.alignItems= "center";
-torreEnd.style.justifyContent= "flex-end";
-torreEnd.style.display= "flex";
-torreEnd.style.flexDirection= "column";
-torreEnd.style.width = "15px";
-torreEnd.style.height = "15rem";
-torreEnd.style.background = "black";
+torreEnd.className = "torre";
 
 principal.appendChild(torreEnd);
 
@@ -67,14 +49,27 @@ barra100.className = "barra";
 torreStart.appendChild(barra100);
 
 //LOGICA DO JOGO
-
-const selecionar = (e) => {        
-        console.log(e.target.clientWidth);
+let num1 = 0
+let num2 = 0
+let dad = '' 
+const selecionar = (e) => {
+    if(num1 !== 0){
+        alert("Já tem uma barra selecionada!")
+    }
+    num1 = e.target
 };
+
 function addDisco(e){
-        console.log(e);
+
+dad = e.target
+num2 = dad.firstChild
+dad.appendChild(num1)
+num1 = 0
 };
 
 torreStart.addEventListener('click', selecionar);
-torreOffSet.addEventListener('click', selecionar);
+// torreStart.addEventListener('click', addDisco);
+// torreOffSet.addEventListener('click', selecionar);
+torreOffSet.addEventListener('click', addDisco);
 torreEnd.addEventListener('click', selecionar);
+// torreEnd.addEventListener('click', addDisco);
