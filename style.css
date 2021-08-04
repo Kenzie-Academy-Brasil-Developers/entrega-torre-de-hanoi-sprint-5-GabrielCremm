@@ -23,9 +23,8 @@ body, header, main, article, footer, div, p{
     }
     .torre{
     align-items: center;
-    justify-content:flex-end;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width:200px;
     height:15rem;
     background: rgb(230, 230, 230);
@@ -39,30 +38,30 @@ body, header, main, article, footer, div, p{
         border: 2px solid greenyellow;
     }
     
-    #barra25 {
+    #barra100 {
         background: rgb(11, 133, 0);
         border: var(--bordaBarra);
-        width: 35px;
+        width: 20%;
         height: var(--alturaBarra);
     }
-    #barra50{
+    #barra75{
         background: blueviolet;
         border: var(--bordaBarra);
-        width: 60px;
+        width: 40%;
         height: var(--alturaBarra);
     
     } 
-    #barra75{
+    #barra50{
         background: rgb(51, 89, 196);
         border: var(--bordaBarra);
-        width: 90px;
+        width: 60%;
         height: var(--alturaBarra);
     
     } 
     
-    #barra100{
+    #barra25{
         background: red;
         border: var(--bordaBarra);
-        width: 110px;
+        width: 80%;
         height: var(--alturaBarra);
     }

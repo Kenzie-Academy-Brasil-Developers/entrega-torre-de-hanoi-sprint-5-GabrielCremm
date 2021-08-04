@@ -54,25 +54,31 @@ let status = true
 
 const selecionar = (e) => {
     torre = e.target
-    if(torre.firstChild === null && status){
+    if(torre.lastChild === null && status){
         console.log("Click em alguma torre com alguma barra");
     }
     else if(torre !== undefined && status){
         console.log("algo selecionado!")
-        bar = torre.firstChild
+        bar = torre.lastChild
+        bar.style.border= "2px solid lightGreen"
         n2 = bar.clientWidth
         status = false
+        console.log(`n2 ${n2}`)
     }
     else{
-        if(torre.firstChild === null){
+        if(torre.lastChild === null){
             torre.appendChild(bar)
+            bar.style.border= "none"
             status =true
-        n1 = torre.firstChild.clientWidth
-        }else if(n2 < n1){
+        
+        }else if(torre.lastChild.clientWidth > n2){
             torre.appendChild(bar)
+            bar.style.border= "none"
             status =true
         }else{
-            console.log("movimento invalido")
+            console.log("movimento invalido, selecione Nova barra")
+            torre = ''
+            bar.style.border= "none"
             status = true
         }
     }
