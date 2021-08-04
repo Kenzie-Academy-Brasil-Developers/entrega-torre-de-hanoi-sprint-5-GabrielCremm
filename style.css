@@ -12,7 +12,17 @@ body, header, main, article, footer, div, p{
     padding: 0;
 }
 @media (min-width:300px){
-    
+    .torre{
+align-items: center;
+justify-content: flex-end;
+display: flex;
+flex-direction: column;
+width : 15px;
+height : 15rem;
+background :black;
+
+
+    }
 
     #titulo {
         text-align: center;
