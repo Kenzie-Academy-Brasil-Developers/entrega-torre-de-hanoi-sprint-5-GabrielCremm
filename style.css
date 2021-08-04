@@ -12,14 +12,25 @@ body, header, main, article, footer, div, p{
     #titulo {
         text-align: center;
     }
+    #placar{
+        text-align: center;
+        margin: 0 auto;
+        width: 80vw;
+        font-size: 1.5em;
+    }
     
     #main {
         display: flex;
         justify-content: space-around;
         width: 80vw;
-        border: 1px solid black;
+        border: var(--bordaBarra);
         margin: 0 auto;
-        padding: 20px;
+        padding: 20px 0;
+    }
+    .win{
+        font-size: 2em;
+        color: greenyellow;
+        font-weight: bold;
     }
     .torre{
     align-items: center;
@@ -27,17 +38,13 @@ body, header, main, article, footer, div, p{
     flex-direction: column-reverse;
     width:200px;
     height:15rem;
-    background: rgb(230, 230, 230);
+    background: rgb(221, 221, 221);
+    border: var(--bordaBarra);
     }
 
     .barra{
         border-radius: 5px;
     }
-    .barra::marker{
-        border-radius: 5px;
-        border: 2px solid greenyellow;
-    }
-    
     #barra100 {
         background: rgb(11, 133, 0);
         border: var(--bordaBarra);
@@ -65,3 +72,16 @@ body, header, main, article, footer, div, p{
         width: 80%;
         height: var(--alturaBarra);
     }
+    @media screen and (min-width: 425px) {
+        body {
+            background-color: rgb(124, 100, 110);
+        }
+        #main {
+          max-width: 800px;
+          padding: 1em;
+        }
+        .torre{
+            border: none;
+            background: rgb(141, 141, 141);
+        }
+      }
