@@ -2,14 +2,17 @@
 const principal = document.getElementById("main");
 // COLUNAS
 const torreStart = document.createElement("div");
+torreStart.id="torreStart"
 const torreOffSet = document.createElement("div");
+torreOffSet.id="torreOffSet"
 const torreEnd = document.createElement("div");
+torreEnd.id="torreEnd"
 // BARRAS
 const barra25 = document.createElement("div");
 const barra50 = document.createElement("div");
 const barra75 = document.createElement("div");
 const barra100 = document.createElement("div");
-
+console.log(barra100);
 // ESTILOS
 //TORRE START
 torreStart.style.alignItems= "center";
@@ -68,12 +71,18 @@ torreStart.appendChild(barra100);
 
 //LOGICA DO JOGO
 
-const selecionar = (e) => {        
-        console.log(e.target.clientWidth);
+const selecionar = (e) => {    
+     const tr= document.addEventListener('click',()=>{
+                
+        })
+        console.log(e.target.id)
+      
 };
 function addDisco(e){
-        console.log(e);
+         
+         
 };
+
 
 torreStart.addEventListener('click', selecionar);
 torreOffSet.addEventListener('click', selecionar);

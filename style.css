@@ -11,6 +11,8 @@ body, header, main, article, footer, div, p{
     border: 0;
     padding: 0;
 }
+@media (min-width:300px){
+    
 
     #titulo {
         text-align: center;
@@ -22,7 +24,7 @@ body, header, main, article, footer, div, p{
         width: 80vw;
         border: 1px solid black;
         margin: 0 auto;
-        padding: 20px;
+        padding:0px 20px;
     }
     
     .barra{
@@ -58,3 +60,13 @@ body, header, main, article, footer, div, p{
         height: var(--alturaBarra);
     }
 
+}
+@media (min-width:720px){
+#main {
+margin: 0% auto;
+   padding: 0 40px;
+   width: 51vw;
+}
+
+
+}
