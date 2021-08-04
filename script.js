@@ -55,16 +55,46 @@ torreStart.appendChild(barra100);
 
 //LOGICA DO JOGO
 
-const selecionar = (e) => {    
-     const tr= document.addEventListener('click',()=>{
-                
-        })
-        console.log(e.target.id)
-      
-};
-function addDisco(e){
-         
-         
+let n1,n2,bar,torre
+let status = true
+
+const selecionar = (e) => {
+    torre = e.target
+    if(torre.lastChild === null && status){
+        console.log("Click em alguma torre com alguma barra");
+    }
+    else if(torre !== undefined && status){
+        console.log("algo selecionado!")
+        bar = torre.lastChild
+        bar.style.border= "2px solid lightGreen"
+        n2 = bar.clientWidth
+        status = false
+        console.log(`n2 ${n2}`)
+    }
+    else{
+        if(torre.lastChild === null){
+            torre.appendChild(bar)
+            bar.style.border= "1px solid black"
+            status =true
+            if(e.target.children.length === 4){
+                console.log("Voce Ganhou Garotinho!!")
+            }        
+        }
+        else if(torre.lastChild.clientWidth > n2){
+            torre.appendChild(bar)
+            bar.style.border= "1px solid black"
+            status =true
+            if(e.target.children.length === 4){
+                console.log("Voce Ganhou Garotinho!!")
+            }
+        }else{
+            console.log("movimento invalido, selecione Nova barra")
+            torre = ''
+            bar.style.border= "1px solid black"
+            status = true
+        }
+    }
+
 };
 
 
