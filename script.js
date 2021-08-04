@@ -49,7 +49,7 @@ barra100.className = "barra";
 torreStart.appendChild(barra100);
 
 //LOGICA DO JOGO
-let num1,bar,torre
+let n1,n2,bar,torre
 let status = true
 
 const selecionar = (e) => {
@@ -60,13 +60,23 @@ const selecionar = (e) => {
     else if(torre !== undefined && status){
         console.log("algo selecionado!")
         bar = torre.firstChild
+        n2 = bar.clientWidth
         status = false
-        console.log("selecione destino",bar)
     }
     else{
-        torre.appendChild(bar)
-        status=true
+        if(torre.firstChild === null){
+            torre.appendChild(bar)
+            status =true
+        n1 = torre.firstChild.clientWidth
+        }else if(n2 < n1){
+            torre.appendChild(bar)
+            status =true
+        }else{
+            console.log("movimento invalido")
+            status = true
+        }
     }
+
 };
 
 torreStart.addEventListener('click', selecionar);
