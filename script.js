@@ -68,17 +68,23 @@ const selecionar = (e) => {
     else{
         if(torre.lastChild === null){
             torre.appendChild(bar)
-            bar.style.border= "none"
+            bar.style.border= "1px solid black"
             status =true
-        
-        }else if(torre.lastChild.clientWidth > n2){
+            if(e.target.children.length === 4){
+                console.log("Voce Ganhou Garotinho!!")
+            }        
+        }
+        else if(torre.lastChild.clientWidth > n2){
             torre.appendChild(bar)
-            bar.style.border= "none"
+            bar.style.border= "1px solid black"
             status =true
+            if(e.target.children.length === 4){
+                console.log("Voce Ganhou Garotinho!!")
+            }
         }else{
             console.log("movimento invalido, selecione Nova barra")
             torre = ''
-            bar.style.border= "none"
+            bar.style.border= "1px solid black"
             status = true
         }
     }
