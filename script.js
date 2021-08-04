@@ -49,27 +49,26 @@ barra100.className = "barra";
 torreStart.appendChild(barra100);
 
 //LOGICA DO JOGO
-let num1 = 0
-let num2 = 0
-let dad = '' 
+let num1,bar,torre
+let status = true
+
 const selecionar = (e) => {
-    if(num1 !== 0){
-        alert("Já tem uma barra selecionada!")
+    torre = e.target
+    if(torre.firstChild === null && status){
+        console.log("Click em alguma torre com alguma barra");
     }
-    num1 = e.target
-};
-
-function addDisco(e){
-
-dad = e.target
-num2 = dad.firstChild
-dad.appendChild(num1)
-num1 = 0
+    else if(torre !== undefined && status){
+        console.log("algo selecionado!")
+        bar = torre.firstChild
+        status = false
+        console.log("selecione destino",bar)
+    }
+    else{
+        torre.appendChild(bar)
+        status=true
+    }
 };
 
 torreStart.addEventListener('click', selecionar);
-// torreStart.addEventListener('click', addDisco);
-// torreOffSet.addEventListener('click', selecionar);
-torreOffSet.addEventListener('click', addDisco);
+torreOffSet.addEventListener('click', selecionar);
 torreEnd.addEventListener('click', selecionar);
-// torreEnd.addEventListener('click', addDisco);
