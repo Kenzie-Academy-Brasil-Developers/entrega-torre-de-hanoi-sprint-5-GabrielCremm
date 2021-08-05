@@ -62,7 +62,6 @@ let click = 0;
     const selecionar = (e) => {
     idWin = e.target.id;
     clas = e.target.className
-    clicks.innerText= "QUANTIDADE DE CLICKS "+click;
     placar.appendChild(clicks);
 
     torre = e.target
@@ -70,46 +69,43 @@ let click = 0;
         console.log("Click em alguma torre com alguma barra");
     }
     else if(torre !== undefined && status && clas === "torre"){
-        win.innerHTML= ''
-        click++
-        e.target.style.border = 'none'
-        bar = torre.lastChild
-        bar.style.border= "2px solid lightGreen"
-        n2 = bar.clientWidth
-        status = false
+        win.innerHTML= '';
+        e.target.style.border = 'none';
+        bar = torre.lastChild;
+        bar.style.border= "2px solid lightGreen";
+        n2 = bar.clientWidth;
+        status = false;
     }
     else{
         if(torre.lastChild === null && clas === "torre"){
-            click++
             torre.appendChild(bar);
             bar.style.border= "1px solid black";
             status =true;
+            click++
             // if(e.target.children.length === 4 && idWin !== "winner"){
             //     console.log("Voce Ganhou Garotinho!!");
             // }        
         }
         else if(torre.lastChild.clientWidth > n2 && clas === "torre"){
-            click++
             torre.appendChild(bar)
             bar.style.border= "1px solid black"
             status =true
-            if(e.target.children.length === 4 && idWin !== "winner"){
+            click++
+            if(e.target.children.length === 4 && click >=15){
                 placar.appendChild(win)
                 e.target.style.border= "5px solid lightGreen"
+                win.innerText=`GANHOU! ${click}`
                 click = 0
-                win.innerText="GANHOU!!"
                 win.classList = 'win'
                 
             }
         }else if(torre.lastChild.clientWidth === n2){
-            click++
-            torre = ''
-            bar.style.border= "1px solid black"
-            status = true
+            torre = '';
+            bar.style.border= "1px solid black";
+            status = true;
         }
-        else{
-            click++
-        }
+
+    clicks.innerText= "QUANTIDADE DE CLICKS "+click;
     }
 };
 
