@@ -14,7 +14,6 @@ const placar = document.getElementById("placar");
 const clicks = document.createElement("p");
 const win = document.createElement("p");
 win.className = "win"
-win.innerText= "GANHOU!!"
 // ESTILOS
 //TORRE START
 torreStart.className = "torre";
@@ -71,9 +70,9 @@ const selecionar = (e) => {
         console.log("Click em alguma torre com alguma barra");
     }
     else if(torre !== undefined && status){
+        win.innerHTML= ''
         click++
         e.target.style.border = 'none'
-        console.log("algo selecionado!")
         bar = torre.lastChild
         bar.style.border= "2px solid lightGreen"
         n2 = bar.clientWidth
@@ -97,19 +96,17 @@ const selecionar = (e) => {
             if(e.target.children.length === 4 && idWin !== "winner"){
                 placar.appendChild(win)
                 e.target.style.border= "5px solid lightGreen"
-                console.log("Voce Ganhou Garotinho!!")
                 click = 0
+                
             }
         }else if(torre.lastChild.clientWidth === n2){
             click++
-            console.log("Soltou a barra no msm lugar!")
             torre = ''
             bar.style.border= "1px solid black"
             status = true
         }
         else{
             click++
-            console.log("movimento invalido, selecione Nova barra")
         }
     }
 console.log(click + "isso")
