@@ -59,7 +59,7 @@ let click = 0;
 
     //PLACAR
 
-const selecionar = (e) => {
+    const selecionar = (e) => {
     idWin = e.target.id;
     clas = e.target.className
     clicks.innerText= "QUANTIDADE DE CLICKS "+click;
