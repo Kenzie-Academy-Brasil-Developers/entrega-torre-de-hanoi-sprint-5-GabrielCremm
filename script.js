@@ -13,7 +13,6 @@ const barra100 = document.createElement("div");
 const placar = document.getElementById("placar");
 const clicks = document.createElement("p");
 const win = document.createElement("p");
-win.className = "win"
 // ESTILOS
 //TORRE START
 torreStart.className = "torre";
@@ -56,7 +55,7 @@ torreStart.appendChild(barra25);
 
 
 //LOGICA DO JOGO
-let n2,bar,torre,idWin
+let n2,bar,torre,idWin,clas
 let status = true;
 let click = 0;
 
@@ -64,6 +63,7 @@ let click = 0;
 
 const selecionar = (e) => {
     idWin = e.target.id;
+    clas = e.target.className
     clicks.innerText= "QUANTIDADE DE CLICKS "+click;
     placar.appendChild(clicks);
 
@@ -71,7 +71,7 @@ const selecionar = (e) => {
     if(torre.lastChild === null && status){
         console.log("Click em alguma torre com alguma barra");
     }
-    else if(torre !== undefined && status){
+    else if(torre !== undefined && status && clas === "torre"){
         win.innerHTML= ''
         click++
         e.target.style.border = 'none'
@@ -81,7 +81,7 @@ const selecionar = (e) => {
         status = false
     }
     else{
-        if(torre.lastChild === null){
+        if(torre.lastChild === null && clas === "torre"){
             click++
             torre.appendChild(bar);
             bar.style.border= "1px solid black";
@@ -90,7 +90,7 @@ const selecionar = (e) => {
             //     console.log("Voce Ganhou Garotinho!!");
             // }        
         }
-        else if(torre.lastChild.clientWidth > n2){
+        else if(torre.lastChild.clientWidth > n2 && clas === "torre"){
             click++
             torre.appendChild(bar)
             bar.style.border= "1px solid black"
@@ -99,6 +99,8 @@ const selecionar = (e) => {
                 placar.appendChild(win)
                 e.target.style.border= "5px solid lightGreen"
                 click = 0
+                win.innerText="GANHOU!!"
+                win.classList = 'win'
                 
             }
         }else if(torre.lastChild.clientWidth === n2){
@@ -111,7 +113,6 @@ const selecionar = (e) => {
             click++
         }
     }
-console.log(click + "isso")
 };
 
 torreStart.addEventListener('click', selecionar);
